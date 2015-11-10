@@ -1,0 +1,26 @@
+CREATE DATABASE `haoMonitor` DEFAULT CHARSET utf8;
+
+CREATE TABLE `project` (
+		`id` int(11) NOT NULL auto_increment ,
+		`name` varchar(30)  NOT NULL,
+		`status` tinyint(4) NOT NULL default '0',
+		PRIMARY KEY  (`id`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `checkinfo` (
+		`id` int(11) NOT NULL auto_increment ,
+		`pro_id` int(11) NOT NULL,
+		`user_ids` text,
+		`name` varchar(30)  NOT NULL,
+		`warningtype` tinyint(1)  NOT NULL default 0,
+		`status` tinyint(4) NOT NULL default '0',
+		PRIMARY KEY  (`id`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `user` (
+		`id` int(11) NOT NULL auto_increment ,
+		`name` varchar(30)  NOT NULL,
+		`tel` char(11)  NOT NULL,
+		`email` varchar(30) NOT NULL,
+		PRIMARY KEY  (`id`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;
